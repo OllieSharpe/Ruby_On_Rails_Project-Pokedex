@@ -6,10 +6,8 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Parent</th>
-      <th>Evolution method</th>
-      <th>Sprite</th>
-      <th>Sprite shiny</th>
+      <th>Type1</th>
+      <th>Type2</th>
       <th>Hp</th>
       <th>Attack</th>
       <th>Defense</th>
@@ -25,10 +23,8 @@
     <% @pokemons.each do |pokemon| %>
       <tr>
         <td><%= pokemon.name %></td>
-        <td><%= pokemon.parent %></td>
-        <td><%= pokemon.evolution_method %></td>
-        <td><%= pokemon.sprite %></td>
-        <td><%= pokemon.sprite_shiny %></td>
+        <td><%= pokemon.type1 %></td>
+        <td><%= pokemon.type2 %></td>
         <td><%= pokemon.hp %></td>
         <td><%= pokemon.attack %></td>
         <td><%= pokemon.defense %></td>

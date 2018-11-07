@@ -17,23 +17,13 @@
 </p>
 
 <p>
-  <strong>Parent:</strong>
-  <%= @pokemon.parent %>
+  <strong>Type1:</strong>
+  <%= @pokemon.type1 %>
 </p>
 
 <p>
-  <strong>Evolution method:</strong>
-  <%= @pokemon.evolution_method %>
-</p>
-
-<p>
-  <strong>Sprite:</strong>
-  <%= @pokemon.sprite %>
-</p>
-
-<p>
-  <strong>Sprite shiny:</strong>
-  <%= @pokemon.sprite_shiny %>
+  <strong>Type2:</strong>
+  <%= @pokemon.type2 %>
 </p>
 
 <p>
@@ -52,12 +42,12 @@
 </p>
 
 <p>
-  <strong>Sp attack:</strong>
+  <strong>Sp.attack:</strong>
   <%= @pokemon.sp_attack %>
 </p>
 
 <p>
-  <strong>Sp defense:</strong>
+  <strong>Sp.defense:</strong>
   <%= @pokemon.sp_defense %>
 </p>
 
@@ -67,8 +57,8 @@
 </p>
 
 <p>
-  <strong>Generation:</strong>
-  <%= @pokemon.generation_id %>
+  <strong>Native region:</strong>
+  <%= @pokemon.generation.region %>
 </p>
 
 <%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
