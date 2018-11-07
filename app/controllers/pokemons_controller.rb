@@ -91,6 +91,6 @@ class PokemonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokemon_params
-      params.require(:pokemon).permit(:name, :parent, :evolution_method, :sprite, :sprite_shiny, :hp, :attack, :defense, :sp_attack, :sp_defense, :speed, :generation_id)
+      params.require(:pokemon).permit(:name, :type1, :type2, :parent, :evolution_method, :sprite, :sprite_shiny, :hp, :attack, :defense, :sp_attack, :sp_defense, :speed, :generation_id)
     end
 end
