@@ -10,6 +10,28 @@ class PokemonsController < ApplicationController
   # GET /pokemons/1
   # GET /pokemons/1.json
   def show
+    @current = Pokemon.all.where("id = #{params[:id]}")
+    @pokemon_array = []
+
+    def rollback
+      if (@current[0].parent != nil and @current[0].parent != "")
+        @current = Pokemon.all.where("name = '#{@current[0].parent}'")
+        rollback
+      end
+    end
+
+    def search
+      @pokemon_array.push(@current)
+      @current = Pokemon.all.where("parent = '#{@current[0].name}'")
+      if (@current.length > 2)
+        @pokemon_array.push(@current)
+      elsif (@current[0] != nil)
+        search
+      end
+    end
+
+    rollback
+    search
   end
 
   # GET /pokemons/new

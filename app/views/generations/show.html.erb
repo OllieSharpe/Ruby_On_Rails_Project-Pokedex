@@ -15,5 +15,51 @@
   <%= @generation.user_id %>
 </p>
 
+<p>
+  <strong>Pokemon:</strong>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Parent</th>
+      <th>Evolution method</th>
+      <th>Sprite</th>
+      <th>Sprite shiny</th>
+      <th>Hp</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp attack</th>
+      <th>Sp defense</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pokemons.each do |pokemon| %>
+      <tr>
+        <td><%= pokemon.name %></td>
+        <td><%= pokemon.parent %></td>
+        <td><%= pokemon.evolution_method %></td>
+        <td><%= pokemon.sprite %></td>
+        <td><%= pokemon.sprite_shiny %></td>
+        <td><%= pokemon.hp %></td>
+        <td><%= pokemon.attack %></td>
+        <td><%= pokemon.defense %></td>
+        <td><%= pokemon.sp_attack %></td>
+        <td><%= pokemon.sp_defense %></td>
+        <td><%= pokemon.speed %></td>
+        <td><%= pokemon.generation_id %></td>
+        <td><%= link_to 'Show', pokemon %></td>
+        <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
+        <td><%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_generation_path(@generation) %> |
 <%= link_to 'Back', generations_path %>
