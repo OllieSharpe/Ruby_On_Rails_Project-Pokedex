@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pokemon.name %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @pokemon.parent %>
+</p>
+
+<p>
+  <strong>Evolution method:</strong>
+  <%= @pokemon.evolution_method %>
+</p>
+
+<p>
+  <strong>Sprite:</strong>
+  <%= @pokemon.sprite %>
+</p>
+
+<p>
+  <strong>Sprite shiny:</strong>
+  <%= @pokemon.sprite_shiny %>
+</p>
+
+<p>
+  <strong>Hp:</strong>
+  <%= @pokemon.hp %>
+</p>
+
+<p>
+  <strong>Attack:</strong>
+  <%= @pokemon.attack %>
+</p>
+
+<p>
+  <strong>Defense:</strong>
+  <%= @pokemon.defense %>
+</p>
+
+<p>
+  <strong>Sp attack:</strong>
+  <%= @pokemon.sp_attack %>
+</p>
+
+<p>
+  <strong>Sp defense:</strong>
+  <%= @pokemon.sp_defense %>
+</p>
+
+<p>
+  <strong>Speed:</strong>
+  <%= @pokemon.speed %>
+</p>
+
+<p>
+  <strong>Generation:</strong>
+  <%= @pokemon.generation_id %>
+</p>
+
+<%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
+<%= link_to 'Back', pokemons_path %>

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  parent: MyString
+  evolution_method: MyString
+  sprite: MyString
+  sprite_shiny: MyString
+  hp: 1
+  attack: 1
+  defense: 1
+  sp_attack: 1
+  sp_defense: 1
+  speed: 1
+  generation_id: 1
+
+two:
+  name: MyString
+  parent: MyString
+  evolution_method: MyString
+  sprite: MyString
+  sprite_shiny: MyString
+  hp: 1
+  attack: 1
+  defense: 1
+  sp_attack: 1
+  sp_defense: 1
+  speed: 1
+  generation_id: 1
