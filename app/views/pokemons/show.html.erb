@@ -1,15 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1><% for i in 0..(@pokemon_array.length - 1) do %>
-      <% if (@pokemon_array[i].length > 2) %>
-        <% for j in 0..(@pokemon_array[i].length - 1) do %>
-          <a href="/pokemons/<%=@pokemon_array[i][j].id%>">split <%=@pokemon_array[i][j].name%></a>
-        <% end %>
-      <% else %>
-        <a href="/pokemons/<%=@pokemon_array[i][0].id%>"><%=@pokemon_array[i][0].name%></a>
-      <% end %>
-    <% end %>
-</h1>
+<p>
+  <img src="<%=@pokemon.sprite%>" alt="<%=@pokemon.name%>" height="200" width="200">
+</p>
 
 <p>
   <strong>Name:</strong>
@@ -17,12 +10,12 @@
 </p>
 
 <p>
-  <strong>Type1:</strong>
+  <strong>Type 1:</strong>
   <%= @pokemon.type1 %>
 </p>
 
 <p>
-  <strong>Type2:</strong>
+  <strong>Type 2:</strong>
   <%= @pokemon.type2 %>
 </p>
 
@@ -60,6 +53,28 @@
   <strong>Native region:</strong>
   <%= @pokemon.generation.region %>
 </p>
+
+<p>
+  <strong>Evolution line:</strong>
+</p>
+
+<div class="evolution-box">
+  <% for i in 0..(@pokemon_array.length - 1) do %>
+    <% if (@pokemon_array[i].length > 2) %>
+    <div class="split-entries">
+      <% for j in 0..(@pokemon_array[i].length - 1) do %>
+        <div class="group-method-sprite">
+          <p><%=@pokemon_array[i][j].evolution_method%></p><a href="/pokemons/<%=@pokemon_array[i][j].id%>"><img src="<%=@pokemon_array[i][j].sprite%>" alt="<%=@pokemon_array[i][j].name %>"></a>
+        </div>
+      <% end %>
+    </div>
+    <% else %>
+    <div class="regular-entries">
+      <p><%=@pokemon_array[i][0].evolution_method%></p><a href="/pokemons/<%=@pokemon_array[i][0].id%>"><img src="<%=@pokemon_array[i][0].sprite%>" alt="<%=@pokemon_array[i][0].name %>"></a>
+    </div>
+    <% end %>
+  <% end %>
+</div>
 
 <%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
 <%= link_to 'Back', pokemons_path %>
