@@ -2,22 +2,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <img src="<%=@pokemon.sprite%>" alt="<%=@pokemon.name%>" height="200" width="200">
+  <img id="picture" src="<%=@pokemon.sprite%>" alt="<%=@pokemon.name%>" height="200" width="200">
 </p>
 
 <p>
   <strong>Name:</strong>
-  <%= @pokemon.name %>
+  <%= @pokemon.name.capitalize %>
 </p>
 
 <p>
   <strong>Main Type:</strong>
-  <%= @pokemon.type1 %>
+  <%= @pokemon.type1.capitalize %>
 </p>
 
 <p>
   <strong>Secondary Type:</strong>
-  <%= @pokemon.type2 %>
+  <% if (@pokemon.type2) %>
+    <%= @pokemon.type2.capitalize %>
+  <% else %>
+    <%= @pokemon.type2 %>
+  <% end %>
 </p>
 
 <div class="outer-box">
@@ -180,4 +184,14 @@
   blue();
   green();
   pink();
+
+  document.getElementById("picture").addEventListener('click', function() {
+    if (document.getElementById("picture").src == "<%=@pokemon.sprite%>") {
+      document.getElementById("picture").src = "<%=@pokemon.sprite_shiny%>";
+    }
+    else {
+      document.getElementById("picture").src = "<%=@pokemon.sprite%>"
+    };
+  });
+
 </script>
