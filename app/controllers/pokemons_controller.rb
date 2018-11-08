@@ -32,6 +32,8 @@ class PokemonsController < ApplicationController
 
     rollback
     search
+
+    @generation = @pokemon.generation_id
   end
 
   # GET /pokemons/new
