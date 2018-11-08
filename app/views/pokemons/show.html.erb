@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -19,35 +20,83 @@
   <%= @pokemon.type2 %>
 </p>
 
-<p>
-  <strong>Hp:</strong>
-  <%= @pokemon.hp %>
-</p>
+<div class="outer-box">
+  <div class="stat-names">
+    <div class="wrap">
+      <strong>Hp:</strong>
+      <p id="hp"><%= @pokemon.hp %></p>
+    </div>
+  </div>
+  <div class="bar-box">
+    <div class="bar" id="red-bar">
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Attack:</strong>
-  <%= @pokemon.attack %>
-</p>
+<div class="outer-box">
+  <div class="stat-names">
+    <div class="wrap">
+      <strong>Attack:</strong>
+      <p id="attack"><%= @pokemon.attack %></p>
+    </div>
+  </div>
+  <div class="bar-box">
+    <div class="bar" id="orange-bar">
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Defense:</strong>
-  <%= @pokemon.defense %>
-</p>
+<div class="outer-box">
+  <div class="stat-names">
+    <div class="wrap">
+      <strong>Defense:</strong>
+      <p id="defense"><%= @pokemon.defense %></p>
+    </div>
+  </div>
+  <div class="bar-box">
+    <div class="bar" id ="yellow-bar">
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Sp.attack:</strong>
-  <%= @pokemon.sp_attack %>
-</p>
+<div class="outer-box">
+  <div class="stat-names">
+    <div class="wrap">
+      <strong>Sp.Attack:</strong>
+      <p id="sp-attack"><%= @pokemon.sp_attack %></p>
+    </div>
+  </div>
+  <div class="bar-box">
+    <div class="bar" id="blue-bar">
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Sp.defense:</strong>
-  <%= @pokemon.sp_defense %>
-</p>
+<div class="outer-box">
+  <div class="stat-names">
+    <div class="wrap">
+      <strong>Sp.Defense:</strong>
+      <p id="sp-defense"><%= @pokemon.sp_defense %></p>
+    </div>
+  </div>
+  <div class="bar-box">
+    <div class="bar" id="green-bar">
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Speed:</strong>
-  <%= @pokemon.speed %>
-</p>
+<div class="outer-box">
+  <div class="stat-names">
+    <div class="wrap">
+      <strong>Speed:</strong>
+      <p id="speed"><%= @pokemon.speed %></p>
+    </div>
+  </div>
+  <div class="bar-box">
+    <div class="bar" id="pink-bar">
+    </div>
+  </div>
+</div>
 
 <p>
   <strong>Native region:</strong>
@@ -81,3 +130,54 @@
 <% end %>
 
 <%= link_to 'Back', pokemons_path %>
+
+<script type="text/javascript">
+  function red() {
+    var value = document.getElementById("hp");
+    var number = parseInt(value.innerHTML)
+    var pixels = ((number/200)*550).toString();
+    var string = pixels + "px";
+    document.getElementById("red-bar").style.width = string;
+  };
+  function orange() {
+    var value = document.getElementById("attack");
+    var number = parseInt(value.innerHTML)
+    var pixels = ((number/200)*550).toString();
+    var string = pixels + "px";
+    document.getElementById("orange-bar").style.width = string;
+  };
+  function yellow() {
+    var value = document.getElementById("defense");
+    var number = parseInt(value.innerHTML)
+    var pixels = ((number/200)*550).toString();
+    var string = pixels + "px";
+    document.getElementById("yellow-bar").style.width = string;
+  };
+  function blue() {
+    var value = document.getElementById("sp-attack");
+    var number = parseInt(value.innerHTML)
+    var pixels = ((number/200)*550).toString();
+    var string = pixels + "px";
+    document.getElementById("blue-bar").style.width = string;
+  };
+  function green() {
+    var value = document.getElementById("sp-defense");
+    var number = parseInt(value.innerHTML)
+    var pixels = ((number/200)*550).toString();
+    var string = pixels + "px";
+    document.getElementById("green-bar").style.width = string;
+  };
+  function pink() {
+    var value = document.getElementById("speed");
+    var number = parseInt(value.innerHTML)
+    var pixels = ((number/200)*550).toString();
+    var string = pixels + "px";
+    document.getElementById("pink-bar").style.width = string;
+  };
+  red();
+  orange();
+  yellow();
+  blue();
+  green();
+  pink();
+</script>

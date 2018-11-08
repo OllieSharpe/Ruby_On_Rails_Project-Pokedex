@@ -112,3 +112,51 @@ label {
 .regular-entries p {
   margin-right: 20px;
 }
+
+.outer-box {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.bar-box {
+  width: 550px;
+  display: flex;
+}
+
+.bar {
+  width: 200px;
+  justify-content: flex-start;
+  border-radius: 5px;
+  border: 1px solid dimGray;
+}
+
+.wrap {
+  display: flex;
+}
+
+#red-bar {
+  background-color: red;
+}
+
+#orange-bar {
+  background-color: orange;
+}
+
+#yellow-bar {
+  background-color: yellow;
+}
+
+#blue-bar {
+  background-color: blue;
+}
+
+#green-bar {
+  background-color: green;
+}
+
+#pink-bar {
+  background-color: pink;
+}
