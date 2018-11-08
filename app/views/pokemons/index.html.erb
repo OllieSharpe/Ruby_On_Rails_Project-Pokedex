@@ -19,9 +19,13 @@
     <% @pokemons.each do |pokemon| %>
       <tr>
         <td><img src="<%= pokemon.sprite %>" alt="<%= pokemon.name %>"></td>
-        <td><%= pokemon.name %></td>
-        <td><%= pokemon.type1 %></td>
-        <td><%= pokemon.type2 %></td>
+        <td><%= pokemon.name.capitalize %></td>
+        <td><%= pokemon.type1.capitalize %></td>
+        <% if (pokemon.type2) %>
+          <td><%= pokemon.type2.capitalize %></td>
+        <% else %>
+          <td><%= pokemon.type2 %></td>
+        <% end %>
         <td><%= pokemon.generation_id %></td>
         <td><%= link_to 'Show', pokemon %></td>
         <% if (current_user && current_user.admin) %>
