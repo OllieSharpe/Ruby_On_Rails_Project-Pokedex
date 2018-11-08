@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.create!([
+  {email: "test@admin.com", encrypted_password: "$2a$11$K0vYi2mZK.VIbJsz9dMLiu3KFZKIspcpfNhbvKXR4MLBnSipZmueC", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: true}
+])
+Generation.create!([
+  {games: "Red, Blue and Yellow", region: "Kanto", user_id: 1},
+  {games: "Gold, Silver and Crystal", region: "Johto", user_id: 1},
+  {games: "Ruby, Sapphire and Emerald", region: "Hoenn", user_id: 1}
+])
+Pokemon.create!([
+  {name: "Espeon", parent: "Eevee", evolution_method: "Friendship (Day)", sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/196.png", sprite_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/196.png", hp: 65, attack: 65, defense: 60, sp_attack: 130, sp_defense: 95, speed: 110, generation_id: 2, type1: "Psychic", type2: ""},
+  {name: "Ivysaur", parent: "Bulbasaur", evolution_method: "Level 16", sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png", sprite_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/2.png", hp: 60, attack: 62, defense: 63, sp_attack: 80, sp_defense: 80, speed: 60, generation_id: 1, type1: "Grass", type2: "Poison"},
+  {name: "Venusaur", parent: "Ivysaur", evolution_method: "Level 32", sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png", sprite_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/3.png", hp: 80, attack: 82, defense: 83, sp_attack: 100, sp_defense: 100, speed: 80, generation_id: 1, type1: "Grass", type2: "Poison"},
+  {name: "Flareon", parent: "Eevee", evolution_method: "Fire Stone", sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/136.png", sprite_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/136.png", hp: 65, attack: 130, defense: 60, sp_attack: 95, sp_defense: 110, speed: 65, generation_id: 1, type1: "Fire", type2: nil},
+  {name: "Jolteon", parent: "Eevee", evolution_method: "Thunder Stone", sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png", sprite_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/135.png", hp: 65, attack: 65, defense: 60, sp_attack: 110, sp_defense: 95, speed: 130, generation_id: 1, type1: "Electric", type2: nil},
+  {name: "Vaporeon", parent: "Eevee", evolution_method: "Water Stone", sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png", sprite_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/134.png", hp: 130, attack: 65, defense: 60, sp_attack: 110, sp_defense: 95, speed: 65, generation_id: 1, type1: "Water", type2: nil},
+  {name: "Eevee", parent: nil, evolution_method: nil, sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png", sprite_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/133.png", hp: 55, attack: 55, defense: 50, sp_attack: 45, sp_defense: 65, speed: 55, generation_id: 1, type1: "Normal", type2: nil},
+  {name: "Bulbasaur", parent: "", evolution_method: "", sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", sprite_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png", hp: 45, attack: 49, defense: 49, sp_attack: 65, sp_defense: 65, speed: 45, generation_id: 1, type1: "Grass", type2: "Poison"},
+  {name: "Umbreon", parent: "Eevee", evolution_method: "Friendship (Night)", sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/197.png", sprite_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/197.png", hp: 95, attack: 65, defense: 110, sp_attack: 60, sp_defense: 130, speed: 65, generation_id: 2, type1: "Dark", type2: ""},
+  {name: "Lotad", parent: "", evolution_method: "", sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/270.png", sprite_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/270.png", hp: 40, attack: 30, defense: 30, sp_attack: 40, sp_defense: 50, speed: 30, generation_id: 3, type1: "Water", type2: "Grass"},
+  {name: "Lombre", parent: "Lotad", evolution_method: "Level 14", sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/271.png", sprite_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/271.png", hp: 60, attack: 50, defense: 50, sp_attack: 60, sp_defense: 70, speed: 50, generation_id: 3, type1: "Water", type2: "Grass"},
+  {name: "Ludicolo", parent: "Lombre", evolution_method: "Water Stone", sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/272.png", sprite_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/272.png", hp: 80, attack: 70, defense: 70, sp_attack: 90, sp_defense: 100, speed: 70, generation_id: 3, type1: "Water", type2: "Grass"}
+])
