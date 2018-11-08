@@ -1,5 +1,7 @@
-<h1>New Pokemon</h1>
+<% if (current_user && current_user.admin) %>
+  <h1>New Pokemon</h1>
 
-<%= render 'form', pokemon: @pokemon %>
+  <%= render 'form', pokemon: @pokemon %>
 
-<%= link_to 'Back', pokemons_path %>
+  <%= link_to 'Back', pokemons_path %>
+<% end %>

@@ -24,8 +24,10 @@
         <td><%= pokemon.type2 %></td>
         <td><%= pokemon.generation_id %></td>
         <td><%= link_to 'Show', pokemon %></td>
-        <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
-        <td><%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if (current_user && current_user.admin) %>
+          <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
+          <td><%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -33,5 +35,8 @@
 
 <br>
 
-<%= link_to 'New Pokemon', new_pokemon_path %>
+<% if (current_user && current_user.admin) %>
+  <%= link_to 'New Pokemon', new_pokemon_path %>
+<% end %>
+
 <%= link_to 'View Generations', generations_path %>
