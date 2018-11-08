@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h5>
+  <strong>Region:</strong>
+  <%= @generation.region %>
+</h5>
+
+<h1>Pokemon</h1>
+
+<table class="table table-hover table-responsive">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Main Type</th>
+      <th>Secondary Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pokemons.each do |pokemon| %>
+      <tr>
+        <td><img src="<%= pokemon.sprite %>" alt="<%= pokemon.name %>"></td>
+        <td><%= pokemon.name %></td>
+        <td><%= pokemon.type1 %></td>
+        <td><%= pokemon.type2 %></td>
+        <td><%= link_to 'Show', pokemon %></td>
+        <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
+        <td><%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_generation_path(@generation) %> |
+<%= link_to 'Back', generations_path %>

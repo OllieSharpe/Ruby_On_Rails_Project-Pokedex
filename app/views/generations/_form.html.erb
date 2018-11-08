@@ -1,0 +1,32 @@
+<%= form_with(model: generation, local: true) do |form| %>
+  <% if generation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(generation.errors.count, "error") %> prohibited this generation from being saved:</h2>
+
+      <ul>
+      <% generation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :games %>
+    <%= form.text_field :games %>
+  </div>
+
+  <div class="field">
+    <%= form.label :region %>
+    <%= form.text_field :region %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
