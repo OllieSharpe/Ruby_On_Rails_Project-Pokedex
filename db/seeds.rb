@@ -1,6 +1,4 @@
-User.create!([
-  {email: "test@admin.com", encrypted_password: "$2a$11$K0vYi2mZK.VIbJsz9dMLiu3KFZKIspcpfNhbvKXR4MLBnSipZmueC", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: true}
-])
+
 Generation.create!([
   {games: "Red, Blue and Yellow", region: "Kanto", user_id: 1},
   {games: "Gold, Silver and Crystal", region: "Johto", user_id: 1},
