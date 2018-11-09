@@ -25,7 +25,7 @@ class PokemonsController < ApplicationController
     def search
       @pokemon_array.push(@current)
       @current = Pokemon.all.where("parent = '#{@current[0].name}'")
-      if (@current.length > 2)
+      if (@current.length > 1)
         @pokemon_array.push(@current)
       elsif (@current[0] != nil)
         search
