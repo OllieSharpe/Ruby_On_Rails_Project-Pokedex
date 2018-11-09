@@ -5,17 +5,17 @@
   <img id="picture" src="<%=@pokemon.sprite%>" alt="<%=@pokemon.name%>" height="200" width="200">
 </p>
 
-<p>
+<p class="basic-font">
   <strong>Name:</strong>
   <%= @pokemon.name.capitalize %>
 </p>
 
-<p>
+<p class="basic-font">
   <strong>Main Type:</strong>
   <%= @pokemon.type1.capitalize %>
 </p>
 
-<p>
+<p class="basic-font">
   <strong>Secondary Type:</strong>
   <% if (@pokemon.type2) %>
     <%= @pokemon.type2.capitalize %>
@@ -27,8 +27,8 @@
 <div class="outer-box">
   <div class="stat-names">
     <div class="wrap">
-      <strong>Hp:</strong>
-      <p id="hp"><%= @pokemon.hp %></p>
+      <strong class="basic-font">Hp:</strong>
+      <p id="hp" class="basic-font"><%= @pokemon.hp %></p>
     </div>
   </div>
   <div class="bar-box">
@@ -40,8 +40,8 @@
 <div class="outer-box">
   <div class="stat-names">
     <div class="wrap">
-      <strong>Attack:</strong>
-      <p id="attack"><%= @pokemon.attack %></p>
+      <strong class="basic-font">Attack:</strong>
+      <p id="attack" class="basic-font"><%= @pokemon.attack %></p>
     </div>
   </div>
   <div class="bar-box">
@@ -53,8 +53,8 @@
 <div class="outer-box">
   <div class="stat-names">
     <div class="wrap">
-      <strong>Defense:</strong>
-      <p id="defense"><%= @pokemon.defense %></p>
+      <strong class="basic-font">Defense:</strong>
+      <p id="defense" class="basic-font"><%= @pokemon.defense %></p>
     </div>
   </div>
   <div class="bar-box">
@@ -66,8 +66,8 @@
 <div class="outer-box">
   <div class="stat-names">
     <div class="wrap">
-      <strong>Sp.Attack:</strong>
-      <p id="sp-attack"><%= @pokemon.sp_attack %></p>
+      <strong class="basic-font">Sp.Attack:</strong>
+      <p id="sp-attack" class="basic-font"><%= @pokemon.sp_attack %></p>
     </div>
   </div>
   <div class="bar-box">
@@ -79,8 +79,8 @@
 <div class="outer-box">
   <div class="stat-names">
     <div class="wrap">
-      <strong>Sp.Defense:</strong>
-      <p id="sp-defense"><%= @pokemon.sp_defense %></p>
+      <strong class="basic-font">Sp.Defense:</strong>
+      <p id="sp-defense" class="basic-font"><%= @pokemon.sp_defense %></p>
     </div>
   </div>
   <div class="bar-box">
@@ -92,8 +92,8 @@
 <div class="outer-box">
   <div class="stat-names">
     <div class="wrap">
-      <strong>Speed:</strong>
-      <p id="speed"><%= @pokemon.speed %></p>
+      <strong class="basic-font">Speed:</strong>
+      <p id="speed" class="basic-font"><%= @pokemon.speed %></p>
     </div>
   </div>
   <div class="bar-box">
@@ -102,12 +102,12 @@
   </div>
 </div>
 
-<p>
+<p class="basic-font">
   <strong>Native region:</strong>
   <%= @pokemon.generation.region %>
 </p>
 
-<p>
+<p class="basic-font">
   <strong>Evolution line</strong>
 </p>
 
@@ -117,23 +117,25 @@
     <div class="split-entries">
       <% for j in 0..(@pokemon_array[i].length - 1) do %>
         <div class="group-method-sprite">
-          <p><%=@pokemon_array[i][j].evolution_method%></p><a href="/pokemons/<%=@pokemon_array[i][j].id%>"><img src="<%=@pokemon_array[i][j].sprite%>" alt="<%=@pokemon_array[i][j].name %>"></a>
+          <p class="basic-font"><%=@pokemon_array[i][j].evolution_method%></p><a href="/pokemons/<%=@pokemon_array[i][j].id%>"><img src="<%=@pokemon_array[i][j].sprite%>" alt="<%=@pokemon_array[i][j].name %>"></a>
         </div>
       <% end %>
     </div>
     <% else %>
     <div class="regular-entries">
-      <p><%=@pokemon_array[i][0].evolution_method%></p><a href="/pokemons/<%=@pokemon_array[i][0].id%>"><img src="<%=@pokemon_array[i][0].sprite%>" alt="<%=@pokemon_array[i][0].name %>"></a>
+      <p class="basic-font"><%=@pokemon_array[i][0].evolution_method%></p><a href="/pokemons/<%=@pokemon_array[i][0].id%>"><img src="<%=@pokemon_array[i][0].sprite%>" alt="<%=@pokemon_array[i][0].name %>"></a>
     </div>
     <% end %>
   <% end %>
 </div>
 
-<% if (current_user && current_user.admin) %>
-  <%= link_to 'Edit', edit_pokemon_path(@pokemon) %>
-<% end %>
+<p class="link">
+  <% if (current_user && current_user.admin) %>
+    <%= link_to 'Edit', edit_pokemon_path(@pokemon)%>
+  <% end %>
 
-<%= link_to 'Back', pokemons_path %>
+  <%= link_to 'Back', pokemons_path %>
+</p>
 
 <script type="text/javascript">
   function red() {

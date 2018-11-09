@@ -33,5 +33,7 @@
 <br>
 
 <% if (current_user && current_user.admin) %>
-  <%= link_to 'New Generation', new_generation_path %>
+  <p class="link"><%= link_to 'New Generation', new_generation_path %></p> <br>
 <% end %>
+
+<p class="link"><%= link_to 'View All Pokemon', pokemons_path %></p>
