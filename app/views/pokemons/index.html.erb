@@ -4,7 +4,7 @@
 
 <p class="link">
   <% if (current_user && current_user.admin) %>
-    <%= link_to 'New Pokemon', new_pokemon_path %>
+    <%= link_to 'New Pokemon', new_pokemon_path %> |
   <% end %>
 
   <%= link_to 'View Generations', generations_path %>
@@ -49,7 +49,7 @@
 
 <p class="link">
   <% if (current_user && current_user.admin) %>
-    <%= link_to 'New Pokemon', new_pokemon_path %>
+    <%= link_to 'New Pokemon', new_pokemon_path %> |
   <% end %>
 
   <%= link_to 'View Generations', generations_path %>

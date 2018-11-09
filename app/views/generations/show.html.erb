@@ -41,7 +41,7 @@
 
 <p class="link">
   <% if (current_user && current_user.admin) %>
-    <%= link_to 'Edit', edit_generation_path(@generation) %>
+    <%= link_to 'Edit', edit_generation_path(@generation) %> |
   <% end %>
   <%= link_to 'Back', generations_path %>
 </p>
