@@ -116,8 +116,8 @@
     <% if (@pokemon_array[i].length > 1) %>
     <div class="split-entries">
       <% for j in 0..(@pokemon_array[i].length - 1) do %>
-        <div class="group-method-sprite">
-          <p class="basic-font"><%=@pokemon_array[i][j].evolution_method%></p><a href="/pokemons/<%=@pokemon_array[i][j].id%>"><img src="<%=@pokemon_array[i][j].sprite%>" alt="<%=@pokemon_array[i][j].name %>"></a>
+        <div class="group-method-sprite basic-font">
+          <%=@pokemon_array[i][j].evolution_method%><a href="/pokemons/<%=@pokemon_array[i][j].id%>"><img src="<%=@pokemon_array[i][j].sprite%>" alt="<%=@pokemon_array[i][j].name %>"></a>
         </div>
       <% end %>
     </div>

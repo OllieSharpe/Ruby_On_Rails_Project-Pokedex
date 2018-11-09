@@ -91,14 +91,14 @@ label {
 }
 
 .split-entries {
-  dislpay: flex;
+  display: flex;
   flex-direction: column;
 }
 
 .group-method-sprite {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 200%;
 }
 
