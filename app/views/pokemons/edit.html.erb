@@ -2,7 +2,8 @@
   <h1>Editing Pokemon</h1>
 
   <%= render 'form', pokemon: @pokemon %>
-
-  <%= link_to 'Show', @pokemon %> |
-  <%= link_to 'Back', pokemons_path %>
+  <p class="link">
+    <%= link_to 'Show', @pokemon %> |
+    <%= link_to 'Back', generations_path %>
+  </p>
 <% end %>

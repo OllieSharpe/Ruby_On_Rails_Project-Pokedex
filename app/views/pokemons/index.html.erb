@@ -17,7 +17,7 @@
       <th scope="col">Name</th>
       <th scope="col">Main Type</th>
       <th scope="col">Secondary Type</th>
-      <th scope="col">Generation</th>
+      <th scope="col">Region</th>
       <th scope="col"></th>
       <th scope="col"></th>
       <th scope="col"></th>
@@ -34,7 +34,7 @@
         <% else %>
           <td><%= pokemon.type2 %></td>
         <% end %>
-        <td><%= pokemon.generation_id %></td>
+        <td><%= pokemon.generation.region %></td>
         <td><%= link_to 'Show', pokemon %></td>
         <% if (current_user && current_user.admin) %>
           <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>

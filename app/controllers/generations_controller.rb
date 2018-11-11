@@ -26,7 +26,7 @@ class GenerationsController < ApplicationController
   # POST /generations
   # POST /generations.json
   def create
-    @generation = Generation.new(generation_params)
+    @generation = Generation.new(games: generation_params[:games], region: generation_params[:region], user_id: 1)
 
     respond_to do |format|
       if @generation.save
@@ -43,7 +43,7 @@ class GenerationsController < ApplicationController
   # PATCH/PUT /generations/1.json
   def update
     respond_to do |format|
-      if @generation.update(generation_params)
+      if @generation.update(games: generation_params[:games], region: generation_params[:region], user_id: 1)
         format.html { redirect_to @generation, notice: 'Generation was successfully updated.' }
         format.json { render :show, status: :ok, location: @generation }
       else
@@ -75,6 +75,6 @@ class GenerationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def generation_params
-      params.require(:generation).permit(:games, :region, :user_id)
+      params.require(:generation).permit(:games, :region)
     end
 end
