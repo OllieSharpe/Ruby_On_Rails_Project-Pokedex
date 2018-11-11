@@ -57,6 +57,10 @@ class GenerationsController < ApplicationController
   # DELETE /generations/1.json
   def destroy
     @generation.destroy
+    @pokemons = Pokemon.all.where(generation_id: @generation.id)
+    @pokemons.each do |pokemon|
+      pokemon.destroy
+    end
     respond_to do |format|
       format.html { redirect_to generations_url, notice: 'Generation was successfully destroyed.' }
       format.json { head :no_content }
