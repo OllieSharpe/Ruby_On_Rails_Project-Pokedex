@@ -1,6 +1,11 @@
-<h1>Editing Generation</h1>
+<% if (current_user && current_user.admin) %>
+  <h1>Editing Generation</h1>
 
-<%= render 'form', generation: @generation %>
+  <%= render 'form', generation: @generation %>
 
-<%= link_to 'Show', @generation %> |
-<%= link_to 'Back', generations_path %>
+  <p class="link">
+    <%= link_to 'Show', @generation %> |
+    <%= link_to 'Back', generations_path %>
+  </p>
+
+<% end %>

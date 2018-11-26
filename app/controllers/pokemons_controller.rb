@@ -1,6 +1,8 @@
 class PokemonsController < ApplicationController
   before_action :set_pokemon, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  require 'httparty'
+
   # GET /pokemons
   # GET /pokemons.json
   def index
@@ -23,7 +25,7 @@ class PokemonsController < ApplicationController
     def search
       @pokemon_array.push(@current)
       @current = Pokemon.all.where("parent = '#{@current[0].name}'")
-      if (@current.length > 2)
+      if (@current.length > 1)
         @pokemon_array.push(@current)
       elsif (@current[0] != nil)
         search
@@ -48,7 +50,18 @@ class PokemonsController < ApplicationController
   # POST /pokemons
   # POST /pokemons.json
   def create
-    @pokemon = Pokemon.new(pokemon_params)
+    id = api[:name].to_i
+    url = "https://pokeapi.co/api/v2/pokemon/#{id}"
+    response = HTTParty.get(url)
+    response.parsed_response
+    type1 = response['types'][0]['type']['name']
+    type2 = nil
+    if (response['types'][1])
+      type1 = response['types'][1]['type']['name']
+      type2 = response['types'][0]['type']['name']
+    end
+
+    @pokemon = Pokemon.new(name: response['name'], type1: type1, type2: type2, parent: remaining[:parent].downcase, evolution_method: remaining[:evolution_method], sprite: response['sprites']['front_default'], sprite_shiny: response['sprites']['front_shiny'], hp: response['stats'][5]['base_stat'], attack: response['stats'][4]['base_stat'], defense: response['stats'][3]['base_stat'], sp_attack: response['stats'][2]['base_stat'], sp_defense: response['stats'][1]['base_stat'], speed: response['stats'][0]['base_stat'], generation_id:  remaining[:generation_id])
 
     respond_to do |format|
       if @pokemon.save
@@ -94,5 +107,13 @@ class PokemonsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokemon_params
       params.require(:pokemon).permit(:name, :type1, :type2, :parent, :evolution_method, :sprite, :sprite_shiny, :hp, :attack, :defense, :sp_attack, :sp_defense, :speed, :generation_id)
+    end
+
+    def api
+      params.require(:pokemon).permit(:name)
+    end
+
+    def remaining
+      params.require(:pokemon).permit(:parent, :evolution_method, :generation_id)
     end
 end

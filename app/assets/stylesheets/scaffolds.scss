@@ -91,14 +91,14 @@ label {
 }
 
 .split-entries {
-  dislpay: flex;
+  display: flex;
   flex-direction: column;
 }
 
 .group-method-sprite {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 200%;
 }
 
@@ -111,4 +111,90 @@ label {
 
 .regular-entries p {
   margin-right: 20px;
+}
+
+.outer-box {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.bar-box {
+  width: 550px;
+  display: flex;
+}
+
+.bar {
+  width: 200px;
+  justify-content: flex-start;
+  border-radius: 5px;
+  border: 1px solid dimGray;
+}
+
+.wrap {
+  display: flex;
+}
+
+#red-bar {
+  background-color: red;
+}
+
+#orange-bar {
+  background-color: orange;
+}
+
+#yellow-bar {
+  background-color: yellow;
+}
+
+#blue-bar {
+  background-color: blue;
+}
+
+#green-bar {
+  background-color: green;
+}
+
+#pink-bar {
+  background-color: pink;
+}
+
+strong {
+  margin-right: 5px;
+}
+
+.link {
+  font-size: 20px;
+}
+
+.basic-font {
+  font-size: 18px;
+}
+
+th {
+  font-size: 18px;
+}
+
+td {
+  font-size: 18px;
+}
+
+.pokemon-title {
+  font-size: 60px;
+}
+
+.show {
+  margin-top: 20px;
+}
+
+.type-box {
+  display: flex;
+  width: 20%;
+  justify-content: space-around;
+}
+
+.type {
+  font-size: 20px;
 }

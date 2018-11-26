@@ -11,14 +11,17 @@
 
   <body>
 
+  <nav class="navbar navbar-light " style="background-color: rgba(255,0,0,0.7); width: 60%; border-radius: 5px; font-size: 15px;">
+    <a class="navbar-brand" style="font-size: 25px; color: white;" href="/">Pokedex</a>
     <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
+      Logged in as <strong><%= current_user.email %></strong>
       <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
       <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
     <% else %>
       <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> |
       <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
     <% end %>
+  </nav>
 
     <%= yield %>
   </body>

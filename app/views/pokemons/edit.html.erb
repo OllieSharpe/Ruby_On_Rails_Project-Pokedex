@@ -1,6 +1,9 @@
-<h1>Editing Pokemon</h1>
+<% if (current_user && current_user.admin) %>
+  <h1>Editing Pokemon</h1>
 
-<%= render 'form', pokemon: @pokemon %>
-
-<%= link_to 'Show', @pokemon %> |
-<%= link_to 'Back', pokemons_path %>
+  <%= render 'form', pokemon: @pokemon %>
+  <p class="link">
+    <%= link_to 'Show', @pokemon %> |
+    <%= link_to 'Back', generations_path %>
+  </p>
+<% end %>

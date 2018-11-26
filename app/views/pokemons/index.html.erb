@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pokemon</h1>
+<h1 class="pokemon-title">Pokemon</h1>
+
+<p class="link">
+  <% if (current_user && current_user.admin) %>
+    <%= link_to 'New Pokemon', new_pokemon_path %> |
+  <% end %>
+
+  <%= link_to 'View Generations', generations_path %>
+</p>
 
 <table class="table table-hover table-responsive">
   <thead>
@@ -9,7 +17,7 @@
       <th scope="col">Name</th>
       <th scope="col">Main Type</th>
       <th scope="col">Secondary Type</th>
-      <th scope="col">Generation</th>
+      <th scope="col">Region</th>
       <th scope="col"></th>
       <th scope="col"></th>
       <th scope="col"></th>
@@ -19,13 +27,19 @@
     <% @pokemons.each do |pokemon| %>
       <tr>
         <td><img src="<%= pokemon.sprite %>" alt="<%= pokemon.name %>"></td>
-        <td><%= pokemon.name %></td>
-        <td><%= pokemon.type1 %></td>
-        <td><%= pokemon.type2 %></td>
-        <td><%= pokemon.generation_id %></td>
+        <td><%= pokemon.name.capitalize %></td>
+        <td><%= pokemon.type1.capitalize %></td>
+        <% if (pokemon.type2) %>
+          <td><%= pokemon.type2.capitalize %></td>
+        <% else %>
+          <td><%= pokemon.type2 %></td>
+        <% end %>
+        <td><%= pokemon.generation.region %></td>
         <td><%= link_to 'Show', pokemon %></td>
-        <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
-        <td><%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if (current_user && current_user.admin) %>
+          <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
+          <td><%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -33,5 +47,10 @@
 
 <br>
 
-<%= link_to 'New Pokemon', new_pokemon_path %>
-<%= link_to 'View Generations', generations_path %>
+<p class="link">
+  <% if (current_user && current_user.admin) %>
+    <%= link_to 'New Pokemon', new_pokemon_path %> |
+  <% end %>
+
+  <%= link_to 'View Generations', generations_path %>
+</p>
