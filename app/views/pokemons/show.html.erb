@@ -11,18 +11,15 @@
 </p>
 
 <p class="basic-font">
-  <strong>Main Type:</strong>
-  <%= @pokemon.type1.capitalize %>
+  <strong>Type(s):</strong>
 </p>
 
-<p class="basic-font">
-  <strong>Secondary Type:</strong>
-  <% if (@pokemon.type2) %>
-    <%= @pokemon.type2.capitalize %>
-  <% else %>
-    <%= @pokemon.type2 %>
-  <% end %>
-</p>
+<div class="type-box">
+  <p id="type1" class="badge badge-pill badge-dark type"><%= @pokemon.type1.capitalize %></p>
+    <% if (@pokemon.type2) %>
+      <p id="type2" class="badge badge-pill badge-dark type"><%= @pokemon.type2.capitalize %></p>
+    <% end %>
+</div>
 
 <div class="outer-box">
   <div class="stat-names">
@@ -197,5 +194,71 @@
       document.getElementById("picture").src = "<%=@pokemon.sprite%>"
     };
   });
+
+  function type(type) {
+    get_from_page = document.getElementById(type).innerHTML
+    switch (get_from_page) {
+      case "Normal":
+        document.getElementById(type).style.backgroundColor = "#a8a77a";
+        break;
+      case "Flying":
+        document.getElementById(type).style.backgroundColor = "#a98ff3";
+        break;
+      case "Rock":
+        document.getElementById(type).style.backgroundColor = "#b6a136";
+        break;
+      case "Ground":
+        document.getElementById(type).style.backgroundColor = "#e2bf65";
+        break;
+      case "Ghost":
+        document.getElementById(type).style.backgroundColor = "#735797";
+        break;
+      case "Fighting":
+        document.getElementById(type).style.backgroundColor = "#c22e28";
+        break;
+      case "Poison":
+        document.getElementById(type).style.backgroundColor = "#a33ea1";
+        break;
+      case "Bug":
+        document.getElementById(type).style.backgroundColor = "#a6b91a";
+        break;
+      case "Steel":
+        document.getElementById(type).style.backgroundColor = "#b7b7ce";
+        break;
+      case "Fire":
+        document.getElementById(type).style.backgroundColor = "#ee8130";
+        break;
+      case "Grass":
+        document.getElementById(type).style.backgroundColor = "#7ac74c";
+        break;
+      case "Water":
+        document.getElementById(type).style.backgroundColor = "#6390f0";
+        break;
+      case "Electric":
+        document.getElementById(type).style.backgroundColor = "#f7d02c";
+        break;
+      case "Psychic":
+        document.getElementById(type).style.backgroundColor = "#f95587";
+        break;
+      case "Ice":
+        document.getElementById(type).style.backgroundColor = "#96d9d6";
+        break;
+      case "Dark":
+        document.getElementById(type).style.backgroundColor = "#705746";
+        break;
+      case "Dragon":
+        document.getElementById(type).style.backgroundColor = "#6f35fc";
+        break;
+      case "Fairy":
+        document.getElementById(type).style.backgroundColor = "#d685ad";
+        break;
+      default:
+        break;
+    };
+  };
+  type('type1');
+  <% if (@pokemon.type2) %>
+    type('type2');
+  <% end %>
 
 </script>

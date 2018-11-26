@@ -61,7 +61,6 @@ class PokemonsController < ApplicationController
       type2 = response['types'][0]['type']['name']
     end
 
-
     @pokemon = Pokemon.new(name: response['name'], type1: type1, type2: type2, parent: remaining[:parent].downcase, evolution_method: remaining[:evolution_method], sprite: response['sprites']['front_default'], sprite_shiny: response['sprites']['front_shiny'], hp: response['stats'][5]['base_stat'], attack: response['stats'][4]['base_stat'], defense: response['stats'][3]['base_stat'], sp_attack: response['stats'][2]['base_stat'], sp_defense: response['stats'][1]['base_stat'], speed: response['stats'][0]['base_stat'], generation_id:  remaining[:generation_id])
 
     respond_to do |format|

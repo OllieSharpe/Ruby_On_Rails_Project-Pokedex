@@ -12,30 +12,3 @@ This project had multiple requirements which required self-learning, across it's
 Sprint 2:
 For sprint 2, I plan on developing the presentation of the site more. I would also like to include some additional JavaScript functionality to generated background colours for the show pages based on the pokemon types.
 
-
-
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# ror-project-one-8

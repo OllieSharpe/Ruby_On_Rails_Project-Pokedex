@@ -1,7 +1,8 @@
 <% if (current_user && current_user.admin) %>
   <h1>New Generation</h1>
 
-  <%= render 'form', generation: @generation %>
-
-  <%= link_to 'Back', generations_path %>
+    <%= render 'form', generation: @generation %>
+  <p class="link">
+    <%= link_to 'Back', generations_path %>
+  </p>
 <% end %>

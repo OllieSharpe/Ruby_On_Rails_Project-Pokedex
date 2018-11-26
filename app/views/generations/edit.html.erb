@@ -3,6 +3,9 @@
 
   <%= render 'form', generation: @generation %>
 
-  <%= link_to 'Show', @generation %> |
-  <%= link_to 'Back', generations_path %>
+  <p class="link">
+    <%= link_to 'Show', @generation %> |
+    <%= link_to 'Back', generations_path %>
+  </p>
+
 <% end %>
