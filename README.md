@@ -5,7 +5,7 @@ This application sorts the current pokemon, entered in its corresponding SQL dat
 The app is currently deployed on heroku at: https://frozen-island-22261.herokuapp.com
 
 Struggles:
-This project had multiple requirements which required self-learning, across it's 3 day duration, such as deploying the site to heroku, populating the database via an API etc. It took this project as an opportunity to learn and develop these new techniques as a priority and as such, little time was given to styling the website beyond the basics. In future I plan to use time-boxing more in order to cap my time spent on unknown problems and free up more time to work on the sites presentation.
+This project had multiple requirements which required self-learning, across it's 3 day duration, such as deploying the site to heroku, populating the database via an API etc. I took this project as an opportunity to learn and develop these new techniques as a priority and as such, little time was given to styling the website beyond the basics. In future I plan to use time-boxing more in order to cap my time spent on unknown problems and free up more time to work on the sites presentation.
 
 Sprint 2:
 For sprint 2, I plan on developing the presentation of the site more. I would also like to include some additional JavaScript functionality to generated background colours for the show pages based on the pokemon types.
