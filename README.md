@@ -1,6 +1,4 @@
-# README
-
-Pokedex in Rails
+# Ruby on Rails project - Pokedex
 
 This application sorts the current pokemon, entered in its corresponding SQL database, by their generation and display multiple details about them to the user. This includes information, such as: stats, types, name, generation and evolution information. The app allows for an admin user to edit and add new entries to the database via the site. The majority of the data is added via PokeAPI with the admin only being required to give the pokemon id and two fields not included in the API. The app uses JavaScript to render stat bars of a size proportional to the individual pokemon's stat. It also allows the user to transition between shiny and non-shiny sprites via an eventlistener.
 
